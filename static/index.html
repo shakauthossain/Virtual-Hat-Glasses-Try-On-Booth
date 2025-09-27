@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Face Try-On</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>AR Face Try-On System</h1>
+            <p>Real-time virtual accessories with face detection</p>
+        </header>
+
+        <main>
+            <!-- Control Panel -->
+            <div id="controls">
+                <div class="control-group">
+                    <label for="accessory-select">Choose Accessory:</label>
+                    <select id="accessory-select">
+                        <option value="">None</option>
+                        <option value="glasses">Glasses</option>
+                        <option value="hat">Hat</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="model-select">3D Model:</label>
+                    <select id="model-select" disabled>
+                        <option value="">Loading models...</option>
+                    </select>
+                    <button id="refresh-models-btn">Refresh Models</button>
+                    <button id="debug-models-btn">Debug Models</button>
+                </div>
+
+                <div class="control-group">
+                    <label for="file-upload">Upload New Model (.glb/.gltf):</label>
+                    <input type="file" id="file-upload" accept=".glb,.gltf" />
+                    <button id="upload-btn" disabled>Upload</button>
+                </div>
+
+                <div class="control-group">
+                    <label for="glasses-size">Glasses Size:</label>
+                    <input type="range" id="glasses-size" min="0.3" max="3.0" step="0.1" value="1.0">
+                    <span id="glasses-size-value">1.0x</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="hat-size">Hat Size:</label>
+                    <input type="range" id="hat-size" min="0.3" max="3.0" step="0.1" value="1.0">
+                    <span id="hat-size-value">1.0x</span>
+                </div>
+
+                <div class="control-group">
+                    <button id="start-btn">Start Camera</button>
+                    <button id="stop-btn" disabled>Stop Camera</button>
+                    <button id="skeleton-btn" disabled>Show Skeleton</button>
+                    <button id="debug-model-btn" disabled>Debug Model</button>
+                </div>
+
+                <div class="status">
+                    <span id="status">Ready to start</span>
+                    <span id="fps">FPS: --</span>
+                </div>
+            </div>
+
+            <!-- Video and 3D Canvas Container -->
+            <div id="video-container">
+                <!-- Video element for webcam -->
+                <video id="video" autoplay muted playsinline></video>
+                
+                <!-- Canvas for Three.js 3D rendering -->
+                <canvas id="canvas"></canvas>
+                
+                <!-- Overlay canvas for debug information -->
+                <canvas id="debug-canvas"></canvas>
+            </div>
+        </main>
+    </div>
+
+    <!-- Three.js and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- Debug script to setup dynamic model loading -->
+    <script>
+        console.log('DEBUG: HTML script started');
+        
+        // Check Three.js availability
+        console.log('Three.js available:', typeof THREE !== 'undefined');
+        console.log('Three.js version:', THREE ? THREE.REVISION : 'Not available');
+        
+        // Check GLTFLoader availability
+        setTimeout(() => {
+            console.log('GLTFLoader available:', typeof THREE.GLTFLoader !== 'undefined');
+            if (typeof THREE.GLTFLoader !== 'undefined') {
+                console.log('GLTFLoader loaded successfully');
+            } else {
+                console.error('GLTFLoader not available - this will cause GLB loading to fail!');
+            }
+        }, 1000);
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DEBUG: DOM loaded, model loading will be handled by ModelManager from API endpoint');
+            
+            // All model loading is now handled dynamically by ModelManager
+            // No hardcoded models here - everything comes from /api/models endpoint
+            
+            console.log('DEBUG: Waiting for ModelManager to load models from API...');
+        });
+    </script>
+    
+    <!-- Main application scripts with cache busting -->
+    <script src="/static/js/webcam.js?v=19"></script>
+    <script src="/static/js/face-tracking.js?v=19"></script>
+    <script src="/static/js/three-scene.js?v=19"></script>
+    <script src="/static/js/model-manager.js?v=19"></script>
+    <script src="/static/js/main.js?v=19"></script>
+</body>
+</html>

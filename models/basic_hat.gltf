@@ -1,0 +1,93 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "AR-Face-Try-On Model Generator"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "mesh": 0,
+      "name": "basic_hat"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0
+          },
+          "indices": 1,
+          "mode": 1,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "basic_hat_material",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.1,
+          0.1,
+          0.1,
+          1.0
+        ],
+        "metallicFactor": 0.8,
+        "roughnessFactor": 0.2
+      }
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 36,
+      "type": "VEC3",
+      "min": [
+        -0.35,
+        -0.02,
+        -0.35
+      ],
+      "max": [
+        0.35,
+        0.2,
+        0.35
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5123,
+      "count": 120,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 432,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 432,
+      "byteLength": 240,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 672,
+      "uri": "data:application/octet-stream;base64,AACAPgAAAAAAAAAA17NdPgAAAAAAAAA+AAAAPgAAAADXs10+MjGNIwAAAAAAAIA+AAAAvgAAAADXs10+17NdvgAAAAAAAAA+AACAvgAAAAAyMQ0k17NdvgAAAAAAAAC+AAAAvgAAAADXs12+yslTpAAAAAAAAIC+AAAAPgAAAADXs12+17NdPgAAAAAAAAC+AACAPs3MTD4AAAAA17NdPs3MTD4AAAA+AAAAPs3MTD7Xs10+MjGNI83MTD4AAIA+AAAAvs3MTD7Xs10+17Ndvs3MTD4AAAA+AACAvs3MTD4yMQ0k17Ndvs3MTD4AAAC+AAAAvs3MTD7Xs12+yslTpM3MTD4AAIC+AAAAPs3MTD7Xs12+17NdPs3MTD4AAAC+MzOzPgrXo7wAAAAAFzGbPgrXo7wzMzM+MzMzPgrXo7wXMZs+RavFIwrXo7wzM7M+MzMzvgrXo7wXMZs+FzGbvgrXo7wzMzM+MzOzvgrXo7xFq0UkFzGbvgrXo7wzMzO+MzMzvgrXo7wXMZu+dECUpArXo7wzM7O+MzMzPgrXo7wXMZu+FzGbPgrXo7wzMzO+AAABAAwADQAAAAwAAQACAA0ADgABAA0AAgADAA4ADwACAA4AAwAEAA8AEAADAA8ABAAFABAAEQAEABAABQAGABEAEgAFABEABgAHABIAEwAGABIABwAIABMAFAAHABMACAAJABQAFQAIABQACQAKABUAFgAJABUACgALABYAFwAKABYACwAAABcADAALABcAGAAZAAAAGAAZABoAAQAZABoAGwACABoAGwAcAAMAGwAcAB0ABAAcAB0AHgAFAB0AHgAfAAYAHgAfACAABwAfACAAIQAIACAAIQAiAAkAIQAiACMACgAiACMAGAALACMA"
+    }
+  ]
+}

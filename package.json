@@ -1,0 +1,16 @@
+{
+  "name": "ar-vr-face-try-on",
+  "version": "1.0.0",
+  "description": "Real-time AR face accessory try-on system",
+  "main": "static/js/main.js",
+  "scripts": {
+    "dev": "python -m http.server 8080",
+    "start": "uvicorn app:app --host 0.0.0.0 --port 8000"
+  },
+  "dependencies": {
+    "three": "^0.157.0"
+  },
+  "devDependencies": {},
+  "author": "AR-VR Developer",
+  "license": "MIT"
+}
