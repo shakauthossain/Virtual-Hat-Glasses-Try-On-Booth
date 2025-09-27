@@ -83,7 +83,7 @@ face-try-on/
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone git@github.com:shakauthossain/Virtual-Hat-Glasses-Try-On-Booth.git
 cd face-try-on
 ```
 
